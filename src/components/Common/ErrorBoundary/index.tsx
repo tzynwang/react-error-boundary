@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 
+import './style.css'
 import { Props, State } from './types'
 
 const INITIAL_STATE: State = {
@@ -11,16 +12,12 @@ const INITIAL_STATE: State = {
 class ErrorBoundary extends React.Component<Props, State> {
   state: State = INITIAL_STATE
 
-  static getDerivedStateFromError(error: any) {
-    const errorMessage =
-      typeof error === 'object' && error !== null && error.message
-        ? error.message
-        : String(error)
+  static getDerivedStateFromError(error: Error) {
+    const errorMessage = error.message ? error.message : String(error)
 
-    const callStack =
-      typeof error === 'object' && error !== null && error.stack
-        ? error.stack.split('\n').slice(1).join('\n')
-        : null
+    const callStack = error.stack
+      ? error.stack.split('\n').slice(1).join('\n')
+      : null
 
     return {
       callStack,
@@ -35,11 +32,10 @@ class ErrorBoundary extends React.Component<Props, State> {
 
     if (hasError) {
       return (
-        <main>
-          <h1>Oops, something goes wrong.</h1>
-          <div>{errorMessage}</div>
+        <div className="error">
+          <div className="error-title">Oops: {errorMessage}</div>
           <pre>{callStack}</pre>
-        </main>
+        </div>
       )
     }
 

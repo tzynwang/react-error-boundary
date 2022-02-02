@@ -1,6 +1,8 @@
-function ThrowError() {
-  throw new Error('Manually generate Error')
-  return <div>This doesn't matter since it can't be reach</div>
+import React, { memo } from 'react'
+
+function ManualError(): React.ReactElement {
+  throw new Error('A manual error')
+  return <div>here doesn't matter</div>
 }
 
-export default ThrowError
+export default memo(ManualError)
