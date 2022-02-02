@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), with template `choffee`.
+
+`npx create-react-app react-fox --template choffee`
+
+Install the following packages by default:
+
+- `typescript`
+- (dev) `webpack`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run deploy`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Deploy the app to the repository as GitHub Pages.
 
-### `npm run build`
+## Components Import Path
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use `@Components/path/to/the/component` to import any component from anywhere.\
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```ts
+// src/index.tsx
+import App from '@Components/App'
+import ErrorBoundary from '@Components/Common/ErrorBoundary'
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Folder Structure
 
-### `npm run eject`
+```
+config/
+  jest/
+  webpack/
+  alias.js
+  env.js
+  getHttpsConfig.js
+  modules.js
+  path.js
+  webpack.config.js
+  webpackDevServer.config.js
+devServer/
+  webpack.config.js
+public/
+  index.html
+  robots.txt
+scripts/
+  build.js
+  start.js
+  test.js
+src/
+  components/
+    App/
+      index.tsx
+    Common/
+      ErrorBoundary/
+        index.tsx
+        types.d.ts
+    Layout/
+  index.css
+  index.tsx
+  react-app.env.d.ts
+  reportWebVitals.ts
+.gitignore
+package.json
+README.md
+tsconfig.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Charlie (Tzu Yin)\
+[Blog](https://tzynwang.github.io/) | [GitHub](https://github.com/tzynwang)
