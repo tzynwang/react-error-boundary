@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 
 import ErrorBoundary from '@Components/Common/ErrorBoundary'
+import ErrorBoundaryWithError from '@Components/Common/ErrorBoundaryWithError'
 
 import './style.css'
 import { LayoutProps } from './types'
@@ -17,7 +18,9 @@ function Layout(props: LayoutProps): React.ReactElement {
           <div className="main">{main}</div>
         </ErrorBoundary>
         <ErrorBoundary>
-          <div className="column">{column}</div>
+          <ErrorBoundaryWithError>
+            <div className="column">{column}</div>
+          </ErrorBoundaryWithError>
         </ErrorBoundary>
       </div>
     </div>
