@@ -10,7 +10,12 @@ const INITIAL_STATE: State = {
 }
 
 class ErrorBoundary extends React.Component<Props, State> {
-  state: State = INITIAL_STATE
+  state: State
+
+  constructor(props: Props) {
+    super(props)
+    this.state = INITIAL_STATE
+  }
 
   static getDerivedStateFromError(error: Error) {
     const errorMessage = error.message ? error.message : String(error)
