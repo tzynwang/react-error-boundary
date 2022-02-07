@@ -32,6 +32,8 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 
   render() {
+    throw new Error('error from error boundary ?')
+
     const { children } = this.props
     const { hasError, errorMessage, callStack } = this.state
 
