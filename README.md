@@ -1,79 +1,25 @@
-# Introduction
+# React Error Boundary Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), with template `choffee`.
+A demo repo for React Error Boundary Component.
 
-`npx create-react-app react-fox --template choffee`
+## Introduction
 
-Install the following packages by default:
+Enter `npm run dev` in terminal to start the dev server on http://locolhost:8080
 
-- `typescript`
-- (dev) `webpack`
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev`
-
-Runs the app in the development mode.\
-Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm run deploy`
-
-Deploy the app to the repository as GitHub Pages.
-
-## Components Import Path
-
-Use `@Components/path/to/the/component` to import any component from anywhere.\
-
-```ts
-// src/index.tsx
-import App from '@Components/App'
-import ErrorBoundary from '@Components/Common/ErrorBoundary'
-```
-
-## Folder Structure
+## Content
 
 ```
-config/
-  jest/
-  webpack/
-  alias.js
-  env.js
-  getHttpsConfig.js
-  modules.js
-  path.js
-  webpack.config.js
-  webpackDevServer.config.js
-devServer/
-  webpack.config.js
-public/
-  index.html
-  robots.txt
-scripts/
-  build.js
-  start.js
-  test.js
 src/
   components/
     App/
-      index.tsx
     Common/
-      ErrorBoundary/
-        index.tsx
-        types.d.ts
+      AsyncError/ -- A React component that throws Error in setTimeout callback
+      Error/ -- A React component that throws Error
+      ErrorBoundary/ -- A React Error Boundary component
+      ErrorBoundaryWithError/ -- A React Error Boundary component that throws Error
     Layout/
   index.css
   index.tsx
-  react-app.env.d.ts
-  reportWebVitals.ts
-.gitignore
-package.json
-README.md
-tsconfig.json
 ```
 
 ## Author
